@@ -281,15 +281,31 @@ header.scrolled {
     min-width: 300px;
     max-width: 500px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-img img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 247, 255, 0.3);
-    border: 2px solid rgba(0, 247, 255, 0.2);
+    width: 280px;
+    height: 280px;
+    border-radius: 50%; /* ✅ Make it round */
+    object-fit: cover;
+    display: block;
+    border: 3px solid rgba(0, 247, 255, 0.8);
+    box-shadow:
+        0 0 15px rgba(0, 247, 255, 0.6),
+        0 0 30px rgba(0, 247, 255, 0.8),
+        0 0 45px rgba(0, 247, 255, 1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-
+about-img img:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 15px rgba(0, 247, 255, 0.6),
+        0 0 30px rgba(0, 247, 255, 0.8),
+        0 0 45px rgba(0, 247, 255, 1);
+}
 .about-content {
     flex: 1;
     min-width: 300px;
