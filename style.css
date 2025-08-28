@@ -477,12 +477,9 @@ about-img img:hover {
 /* Image Styling */
 .project-img {
     width: 100%;
-    height: 220px; /* Fixed height */
-    object-fit: contain; /* Image proportion maintain */
-    background: #0f172a; /* Dark background if image has transparency */
-    padding: 15px; /* Space around image */
+    height: 150px;  /* पहले जैसा छोटा करने के लिए 200px से घटाकर */
+    object-fit: cover;
     transition: transform 0.5s ease;
-    display: block;
 }
 
 .project-card:hover .project-img {
