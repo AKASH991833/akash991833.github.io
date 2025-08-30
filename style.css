@@ -437,7 +437,7 @@ about-img img:hover {
     color: #ccc;
 }
 
-/* Projects Section - Skills Section जैसा */
+
 .projects {
     padding: 50px 10%;
 }
@@ -455,7 +455,7 @@ about-img img:hover {
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Skills जैसा grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
     gap: 30px;
 }
 
@@ -466,18 +466,22 @@ about-img img:hover {
     text-align: center;
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 247, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
 }
-
 .project-card:hover {
     background: rgba(0, 0, 0, 0.8); /* Hover par thoda dark */
     transform: translateY(-10px);
     border-color: var(--primary);
+    box-shadow: 0 10px 20px rgba(0, 247, 255, 0.2);
 }
 
+
+/* Image Styling */
 .project-img {
     width: 100%;
-    height: 200px;
-    padding: 1%;
+    height: 150px;  
     object-fit: cover;
     transition: transform 0.5s ease;
 }
@@ -486,8 +490,23 @@ about-img img:hover {
     transform: scale(1.05);
 }
 
+/* Project Content */
 .project-content {
     padding: 20px;
+}
+
+.project-card i {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+.project-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+
 }
 
 .project-content h3 {
@@ -513,6 +532,7 @@ about-img img:hover {
 }
 
 .tech-tag {
+
     background: rgba(0, 247, 255, 0.1);
     color: var(--primary);
     padding: 5px 10px;
@@ -520,14 +540,20 @@ about-img img:hover {
     font-size: 12px;
 }
 
+/* Links styling */
 .project-links {
     display: flex;
     gap: 15px;
+    background: #6c63ff;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
 }
 
 .project-links a {
     margin: 0 8px;
-    color: #4a41f6;
+    color: #6c63ff;
     text-decoration: none;
     font-weight: bold;
 }
