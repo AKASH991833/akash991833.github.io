@@ -477,6 +477,7 @@ about-img img:hover {
 .project-img {
     width: 100%;
     height: 200px;
+    padding: 1%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
@@ -526,7 +527,7 @@ about-img img:hover {
 
 .project-links a {
     margin: 0 8px;
-    color: #6c63ff;
+    color: #4a41f6;
     text-decoration: none;
     font-weight: bold;
 }
