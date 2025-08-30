@@ -437,9 +437,9 @@ about-img img:hover {
     color: #ccc;
 }
 
-/* Projects Section */
+/* Projects Section - Skills Section जैसा */
 .projects {
-    padding: 100px 10%;
+    padding: 50px 10%;
 }
 
 .projects h2 {
@@ -455,96 +455,83 @@ about-img img:hover {
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Skills जैसा grid layout */
     gap: 30px;
 }
 
 .project-card {
-    position: relative;
+    background: rgba(0, 0, 0, 0.6);  /* Black transparent background */
+    padding: 0px;
     border-radius: 10px;
-    overflow: hidden;
+    text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 247, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
 }
 
 .project-card:hover {
+    background: rgba(0, 0, 0, 0.8); /* Hover par thoda dark */
     transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 247, 255, 0.3);
     border-color: var(--primary);
+    box-shadow: 0 10px 20px rgba(0, 247, 255, 0.2);
 }
 
+
+.project-card i {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+/* अगर आप image use कर रहे हैं तो उसका भी same look रखें */
 .project-img {
     width: 100%;
-    height: 200px;
+    height: 140px;
     object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.project-card:hover .project-img {
-    transform: scale(1.05);
-}
-
-.project-content {
-    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 .project-content h3 {
     font-size: 22px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     color: var(--light);
 }
 
 .project-content p {
     font-size: 14px;
     line-height: 1.6;
-    margin-bottom: 15px;
     color: #ccc;
+    margin-bottom: 10px;
 }
 
 .project-tech {
     display: flex;
+    gap: 8px;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 15px;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .tech-tag {
-    background: rgba(0, 247, 255, 0.1);
-    color: var(--primary);
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 12px;
-}
-
-.project-links {
-    display: flex;
-    gap: 15px;
+    background: #6c63ff;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
 }
 
 .project-links a {
-    padding: 8px 15px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: 500;
+    margin: 0 8px;
+    color: #6c63ff;
     text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.project-links a:first-child {
-    background: var(--primary);
-    color: var(--dark);
-}
-
-.project-links a:last-child {
-    background: transparent;
-    color: var(--primary);
-    border: 1px solid var(--primary);
+    font-weight: bold;
 }
 
 .project-links a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
+    text-decoration: underline;
 }
+
 
 /* AI Expertise Section */
 .ai-expertise {
