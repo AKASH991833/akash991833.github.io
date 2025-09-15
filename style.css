@@ -437,11 +437,17 @@ header.scrolled {
     color: #ccc;
 }
 
+<<<<<<< HEAD
 
 /* Projects Section */
 .projects {
     padding: 100px 10%;
     perspective: 1000px; /* For 3D effect */
+=======
+/* Projects Section - Skills Section जैसा */
+.projects {
+    padding: 50px 10%;
+>>>>>>> 097c9c08f50df1049504363640839c408fadf2b0
 }
 
 .projects h2 {
@@ -457,10 +463,11 @@ header.scrolled {
 
 .projects-container-new {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Skills जैसा grid layout */
     gap: 30px;
 }
 
+<<<<<<< HEAD
 .project-card-new {
     position: relative;
     transform-style: preserve-3d;
@@ -478,28 +485,70 @@ header.scrolled {
 }
 
 .project-img-new {
+=======
+.project-card {
+    background: rgba(0, 0, 0, 0.6);  /* Black transparent background */
+    padding: 0px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+.project-card:hover {
+    background: rgba(0, 0, 0, 0.8); /* Hover par thoda dark */
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 20px rgba(0, 247, 255, 0.2);
+}
+
+
+.project-card i {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+/* अगर आप image use कर रहे हैं तो उसका भी same look रखें */
+.project-img {
+>>>>>>> 097c9c08f50df1049504363640839c408fadf2b0
     width: 100%;
-    height: 200px;
+    height: 140px;
     object-fit: cover;
+<<<<<<< HEAD
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
 
 .project-content-new {
     padding: 20px;
+=======
+    border-radius: 8px;
+    margin-bottom: 20px;
+>>>>>>> 097c9c08f50df1049504363640839c408fadf2b0
 }
 
 .project-content-new h3 {
     font-size: 22px;
+<<<<<<< HEAD
     margin-bottom: 10px;
     color: var(--primary);
+=======
+    margin-bottom: 15px;
+    color: var(--light);
+>>>>>>> 097c9c08f50df1049504363640839c408fadf2b0
 }
 
 .project-content-new p {
     font-size: 14px;
     line-height: 1.6;
     color: #ccc;
+<<<<<<< HEAD
     margin-bottom: 20px;
+=======
+    margin-bottom: 10px;
+>>>>>>> 097c9c08f50df1049504363640839c408fadf2b0
 }
 
 .project-links-new {
@@ -544,6 +593,7 @@ header.scrolled {
     top: 20px;
     left: 20px;
     display: flex;
+<<<<<<< HEAD
     gap: 10px;
 }
 
@@ -558,6 +608,36 @@ header.scrolled {
 
 /* AI Section */
 .ai-section {
+=======
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.tech-tag {
+    background: #6c63ff;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+}
+
+.project-links a {
+    margin: 0 8px;
+    color: #6c63ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* AI Expertise Section */
+.ai-expertise {
+>>>>>>> 097c9c08f50df1049504363640839c408fadf2b0
     padding: 100px 10%;
     text-align: center;
 }
