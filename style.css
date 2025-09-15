@@ -299,7 +299,7 @@ header.scrolled {
         0 0 45px rgba(0, 247, 255, 1);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-about-img img:hover {
+.about-img img:hover {
     transform: translateY(-5px);
     box-shadow:
         0 0 15px rgba(0, 247, 255, 0.6),
@@ -441,6 +441,7 @@ about-img img:hover {
 /* Projects Section */
 .projects {
     padding: 100px 10%;
+    perspective: 1000px; /* For 3D effect */
 }
 
 .projects h2 {
@@ -462,59 +463,51 @@ about-img img:hover {
 
 .project-card-new {
     position: relative;
-    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s ease;
-    background: var(--glass);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+}
+
+.project-card-new:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+    box-shadow: 0 45px 65px rgba(0, 0, 0, 0.15);
 }
 
 .project-img-new {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    transition: all 0.4s ease;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
-.project-card-new:hover .project-img-new {
-    transform: scale(1.1);
-}
-
-.project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+.project-content-new {
     padding: 20px;
-    opacity: 0;
-    transition: all 0.4s ease;
 }
 
-.project-card-new:hover .project-overlay {
-    opacity: 1;
-}
-
-.project-overlay-content h3 {
+.project-content-new h3 {
     font-size: 22px;
     margin-bottom: 10px;
     color: var(--primary);
 }
 
-.project-overlay-content p {
+.project-content-new p {
     font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 20px;
 }
 
 .project-links-new {
-    padding: 20px;
+    padding: 0 20px 20px;
     text-align: center;
 }
 
-.project-links-new .btn-project {
+.btn-project {
     padding: 10px 20px;
     background: var(--primary);
     color: var(--dark);
@@ -523,18 +516,33 @@ about-img img:hover {
     margin: 5px;
     display: inline-block;
     transition: all 0.3s ease;
+    box-shadow: 0 0 10px var(--primary);
 }
 
-.project-links-new .btn-project:hover {
+.btn-project:hover {
     background: var(--secondary);
     color: var(--light);
-    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--secondary);
+}
+
+.btn-project.disabled {
+    background: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.btn-project.disabled:hover {
+    background: #ccc;
+    color: #666;
+    box-shadow: none;
+    transform: none;
 }
 
 .project-tech-new {
     position: absolute;
     top: 20px;
-    right: 20px;
+    left: 20px;
     display: flex;
     gap: 10px;
 }
