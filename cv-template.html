@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Template - Editable & Downloadable</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 247, 255, 0.1);
+            border-radius: 15px;
+            border: 1px solid rgba(0, 247, 255, 0.2);
+        }
+
+        .header h1 {
+            color: #00f7ff;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #ccc;
+            font-size: 16px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: #00f7ff;
+            color: #0a0a0a;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #6e00ff;
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 247, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #00f7ff;
+            color: #00f7ff;
+        }
+
+        .btn-secondary:hover {
+            background: #00f7ff;
+            color: #0a0a0a;
+        }
+
+        /* CV Preview Section */
+        .cv-preview {
+            background: #fff;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .cv-header {
+            text-align: center;
+            border-bottom: 3px solid #00f7ff;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .cv-name {
+            font-size: 32px;
+            color: #0a0a0a;
+            margin-bottom: 5px;
+        }
+
+        .cv-title {
+            font-size: 18px;
+            color: #00f7ff;
+            margin-bottom: 15px;
+        }
+
+        .cv-contact {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .cv-contact span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cv-section {
+            margin-bottom: 25px;
+        }
+
+        .cv-section-title {
+            font-size: 20px;
+            color: #00f7ff;
+            border-bottom: 2px solid #00f7ff;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .cv-item {
+            margin-bottom: 15px;
+        }
+
+        .cv-item-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .cv-item-subtitle {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+
+        .cv-item-date {
+            font-size: 13px;
+            color: #00f7ff;
+            margin-bottom: 5px;
+        }
+
+        .cv-item-description {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .cv-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .cv-skill-tag {
+            background: #00f7ff;
+            color: #0a0a0a;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* Editable Fields */
+        [contenteditable="true"] {
+            border: 1px dashed transparent;
+            padding: 2px 5px;
+            transition: all 0.3s ease;
+        }
+
+        [contenteditable="true"]:hover {
+            border: 1px dashed #00f7ff;
+            background: rgba(0, 247, 255, 0.05);
+        }
+
+        [contenteditable="true"]:focus {
+            outline: none;
+            border: 1px solid #00f7ff;
+            background: rgba(0, 247, 255, 0.1);
+        }
+
+        .instructions {
+            background: rgba(110, 0, 255, 0.1);
+            border: 1px solid rgba(110, 0, 255, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .instructions h3 {
+            color: #00f7ff;
+            margin-bottom: 10px;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+            color: #ccc;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+
+            .header, .btn-group, .instructions {
+                display: none !important;
+            }
+
+            .cv-preview {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cv-preview {
+                padding: 20px;
+            }
+
+            .cv-name {
+                font-size: 24px;
+            }
+
+            .cv-contact {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-file-download"></i> CV Template</h1>
+            <p>Edit this template with your details and download as PDF</p>
+            
+            <div class="btn-group">
+                <a href="index.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Portfolio
+                </a>
+                <button onclick="downloadCV()" class="btn">
+                    <i class="fas fa-download"></i> Download as PDF
+                </button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3><i class="fas fa-info-circle"></i> How to Use:</h3>
+            <ol>
+                <li><strong>Click on any text</strong> to edit it (name, contact, skills, etc.)</li>
+                <li><strong>Add or remove sections</strong> as needed</li>
+                <li><strong>Click "Download as PDF"</strong> to save your CV</li>
+                <li><strong>Or press Ctrl+P</strong> and choose "Save as PDF"</li>
+            </ol>
+        </div>
+
+        <div class="cv-preview" id="cv-content">
+            <!-- Header -->
+            <div class="cv-header">
+                <h1 class="cv-name" contenteditable="true">Your Name Here</h1>
+                <p class="cv-title" contenteditable="true">Your Professional Title (e.g., Web Developer | Designer)</p>
+                <div class="cv-contact">
+                    <span><i class="fas fa-envelope"></i> <span contenteditable="true">your.email@example.com</span></span>
+                    <span><i class="fas fa-phone"></i> <span contenteditable="true">+91 98765 43210</span></span>
+                    <span><i class="fas fa-map-marker-alt"></i> <span contenteditable="true">Your City, Country</span></span>
+                    <span><i class="fab fa-linkedin"></i> <span contenteditable="true">linkedin.com/in/yourname</span></span>
+                    <span><i class="fab fa-github"></i> <span contenteditable="true">github.com/yourname</span></span>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="cv-section">
+                <h2 class="cv-section-title"><i class="fas fa-user"></i> Professional Summary</h2>
+                <p class="cv-item-description" contenteditable="true">
+                    Motivated and detail-oriented professional with experience in [your field]. 
+                    Proven track record of [key achievement]. Seeking to leverage skills in [skill area] 
+                    to contribute to [goal/objective].
+                </p>
+            </div>
+
+            <!-- Skills -->
+            <div class="cv-section">
+                <h2 class="cv-section-title"><i class="fas fa-tools"></i> Skills</h2>
+                <div class="cv-skills">
+                    <span class="cv-skill-tag" contenteditable="true">Skill 1</span>
+                    <span class="cv-skill-tag" contenteditable="true">Skill 2</span>
+                    <span class="cv-skill-tag" contenteditable="true">Skill 3</span>
+                    <span class="cv-skill-tag" contenteditable="true">Skill 4</span>
+                    <span class="cv-skill-tag" contenteditable="true">Skill 5</span>
+                    <span class="cv-skill-tag" contenteditable="true">Skill 6</span>
+                </div>
+            </div>
+
+            <!-- Experience -->
+            <div class="cv-section">
+                <h2 class="cv-section-title"><i class="fas fa-briefcase"></i> Work Experience</h2>
+                
+                <div class="cv-item">
+                    <h3 class="cv-item-title" contenteditable="true">Job Title - Company Name</h3>
+                    <p class="cv-item-date" contenteditable="true">Month Year - Present</p>
+                    <p class="cv-item-description" contenteditable="true">
+                        • Responsible for [key responsibility]<br>
+                        • Achieved [specific accomplishment]<br>
+                        • Collaborated with [team/department] to [result]
+                    </p>
+                </div>
+
+                <div class="cv-item">
+                    <h3 class="cv-item-title" contenteditable="true">Previous Job Title - Previous Company</h3>
+                    <p class="cv-item-date" contenteditable="true">Month Year - Month Year</p>
+                    <p class="cv-item-description" contenteditable="true">
+                        • Managed [specific task or project]<br>
+                        • Improved [metric/process] by [percentage/amount]<br>
+                        • Developed [skill or system]
+                    </p>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="cv-section">
+                <h2 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+                
+                <div class="cv-item">
+                    <h3 class="cv-item-title" contenteditable="true">Degree Name - University/College Name</h3>
+                    <p class="cv-item-subtitle" contenteditable="true">Location</p>
+                    <p class="cv-item-date" contenteditable="true">Year - Year</p>
+                    <p class="cv-item-description" contenteditable="true">
+                        GPA: X.X/4.0 | Relevant Coursework: [Course 1], [Course 2], [Course 3]
+                    </p>
+                </div>
+
+                <div class="cv-item">
+                    <h3 class="cv-item-title" contenteditable="true">High School Diploma - School Name</h3>
+                    <p class="cv-item-subtitle" contenteditable="true">Location</p>
+                    <p class="cv-item-date" contenteditable="true">Year</p>
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div class="cv-section">
+                <h2 class="cv-section-title"><i class="fas fa-project-diagram"></i> Projects</h2>
+                
+                <div class="cv-item">
+                    <h3 class="cv-item-title" contenteditable="true">Project Name</h3>
+                    <p class="cv-item-description" contenteditable="true">
+                        Brief description of the project, technologies used, and your role/outcome.
+                    </p>
+                </div>
+
+                <div class="cv-item">
+                    <h3 class="cv-item-title" contenteditable="true">Another Project</h3>
+                    <p class="cv-item-description" contenteditable="true">
+                        Brief description of the project, technologies used, and your role/outcome.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="cv-section">
+                <h2 class="cv-section-title"><i class="fas fa-certificate"></i> Certifications</h2>
+                
+                <div class="cv-item">
+                    <h3 class="cv-item-title" contenteditable="true">Certification Name - Issuing Organization</h3>
+                    <p class="cv-item-date" contenteditable="true">Year</p>
+                </div>
+
+                <div class="cv-item">
+                    <h3 class="cv-item-title" contenteditable="true">Another Certification - Issuing Organization</h3>
+                    <p class="cv-item-date" contenteditable="true">Year</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function downloadCV() {
+            // Remove contenteditable before printing
+            const editableElements = document.querySelectorAll('[contenteditable="true"]');
+            editableElements.forEach(el => el.removeAttribute('contenteditable'));
+            
+            // Trigger print dialog
+            window.print();
+            
+            // Re-add contenteditable after a delay
+            setTimeout(() => {
+                editableElements.forEach(el => el.setAttribute('contenteditable', 'true'));
+            }, 1000);
+        }
+
+        // Add keyboard shortcut for download (Ctrl+S)
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 's') {
+                e.preventDefault();
+                downloadCV();
+            }
+        });
+    </script>
+</body>
+
+</html>
