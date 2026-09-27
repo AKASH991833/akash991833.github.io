@@ -72,7 +72,7 @@
   </div>
   <div class="hero-actions">
     <a class="btn" href="#projects">$ ./view_projects.sh</a>
-    <a class="btn amber" href="Akash_Vishwakarma_Resume.pdf" target="_blank" rel="noopener">$ wget resume.pdf</a>
+    <a class="btn amber" href="1-Akash_Vishwakarma_Resume.pdf" target="_blank" rel="noopener">$ wget resume.pdf</a>
     <a class="btn ghost" href="#contact">$ ./contact.sh</a>
   </div>
 </section>
@@ -369,7 +369,7 @@
     if (v === 'clear'){ out.innerHTML = ''; return; }
     if (v === 'date'){ print(new Date().toString()); return; }
     if (v === 'open projects'){ document.getElementById('projects').scrollIntoView({behavior:'smooth'}); return; }
-    if (v === 'resume'){ print(cmds.resume); window.open('Akash_Vishwakarma_Resume.pdf','_blank'); return; }
+    if (v === 'resume'){ print(cmds.resume); window.open('1-Akash_Vishwakarma_Resume.pdf','_blank'); return; }
     if (cmds[v]){ print(cmds[v]); return; }
     print("command not found: " + v + " - try 'help'");
   });
