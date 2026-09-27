@@ -3,16 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Akash Vishwakarma - Aspiring Linux System Administrator. Linux, Python and automation. Exploring Docker, AWS and Kubernetes. Mumbai.">
+<meta name="description" content="Akash Vishwakarma - Linux System Administrator, Junior DevOps and Cloud Support. Linux, Python, automation. Mumbai.">
 <meta name="author" content="Akash Vishwakarma">
 <title>akash@linux:~$ | Akash Vishwakarma</title>
 <link rel="icon" type="image/x-icon" href="krish.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="terminal.css">
 </head>
 <body>
+
+<canvas id="matrix" aria-hidden="true"></canvas>
 
 <!-- Boot screen -->
 <div id="boot" aria-hidden="true">
@@ -24,6 +27,8 @@
 <!-- Status bar -->
 <header class="statusbar">
   <a class="host" href="#home"><span class="user">akash</span><span class="at">@</span><span class="machine">portfolio</span><span class="path">:~$</span></a>
+  <span class="tty">tty1</span>
+  <span class="clock" id="clock"></span>
   <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">[menu]</button>
   <nav id="nav">
     <a href="#home">~/home</a>
@@ -48,7 +53,7 @@
       <div class="line"><span class="prompt">akash@portfolio:~$</span> <span class="cmd" data-type="whoami"></span></div>
       <div class="out">Akash Vishwakarma</div>
       <div class="line"><span class="prompt">akash@portfolio:~$</span> <span class="cmd" data-type="cat role.txt"></span></div>
-      <div class="out big">Linux System Administrator <span class="dim">(Fresher)</span></div>
+      <div class="out big">Linux System Administrator</div>
       <div class="out big dim2">Junior DevOps &nbsp;|&nbsp; Cloud Support</div>
       <div class="line"><span class="prompt">akash@portfolio:~$</span> <span class="cmd" data-type="cat location.txt"></span></div>
       <div class="out">Mumbai, India</div>
@@ -58,22 +63,25 @@
       <div class="out"><span class="ok">[ OK ]</span> Docker, AWS, Kubernetes - fundamentals</div>
       <div class="out"><span class="ok">[ OK ]</span> Networking basics</div>
       <div class="out"><span class="run">[ .. ]</span> First Linux admin role - <span class="amber">actively looking</span></div>
-      <div class="line cursor-line"><span class="prompt">akash@portfolio:~$</span> <span class="cursor">&#9608;</span></div>
+      <div id="tty-out"></div>
+      <div class="line tty-line">
+        <span class="prompt">visitor@portfolio:~$</span>
+        <input id="tty-in" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Try a terminal command - type help" placeholder="type 'help' and press enter">
+      </div>
     </div>
   </div>
   <div class="hero-actions">
     <a class="btn" href="#projects">$ ./view_projects.sh</a>
-    <a class="btn amber" href="cv.pdf" target="_blank" rel="noopener">$ wget resume.pdf</a>
+    <a class="btn amber" href="Akash_Vishwakarma_Resume.pdf" target="_blank" rel="noopener">$ wget resume.pdf</a>
     <a class="btn ghost" href="#contact">$ ./contact.sh</a>
   </div>
 </section>
 
 <!-- ABOUT / neofetch -->
-<section id="about">
+<section id="about" class="reveal">
   <h2 class="sec"><span class="prompt">akash@portfolio:~$</span> neofetch</h2>
   <div class="neofetch">
-    <pre class="ascii" aria-hidden="true">
-        <span class="penguin">
+    <pre class="ascii" aria-hidden="true"><span class="penguin">
     .--.
    |o_o |
    |:_/ |
@@ -83,39 +91,44 @@
 \___)=(___/</span></pre>
     <div class="nf-info">
       <div><span class="k">User</span><span class="sep">:</span> Akash Vishwakarma</div>
-      <div><span class="k">Role</span><span class="sep">:</span> Aspiring Linux System Administrator</div>
+      <div><span class="k">Role</span><span class="sep">:</span> Linux System Administrator</div>
       <div><span class="k">Also fits</span><span class="sep">:</span> Junior DevOps, Cloud Support</div>
+      <div><span class="k">Education</span><span class="sep">:</span> BCA (June 2026)</div>
       <div><span class="k">Location</span><span class="sep">:</span> Mumbai, India</div>
       <div><span class="k">Shell</span><span class="sep">:</span> bash, python</div>
       <div><span class="k">Stack</span><span class="sep">:</span> Linux, Python, Docker, AWS, Kubernetes</div>
+      <div><span class="k">Home lab</span><span class="sep">:</span> RHEL, CentOS, Ubuntu, Fedora, Debian, Kali</div>
       <div><span class="k">Interests</span><span class="sep">:</span> automation, ethical hacking, AI tooling</div>
       <div><span class="k">Uptime</span><span class="sep">:</span> learning every single day</div>
-      <div class="nf-note"># I use Linux daily and love the terminal. I build small tools to automate
-# real work, and I use AI to move faster. Looking for my first role where
-# I can keep servers - and myself - learning.</div>
+      <div class="nf-note"># I use Linux daily and love the terminal. I built a home lab across
+# VMware, VirtualBox, dual-boot and physical machines. I automate real
+# work with Python and use AI to move faster. Looking for my first role
+# where I can keep servers - and myself - learning.</div>
     </div>
   </div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills">
+<section id="skills" class="reveal">
   <h2 class="sec"><span class="prompt">akash@portfolio:~$</span> systemctl list-units --type=skill</h2>
   <div class="units">
-    <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">linux-core.service</span><span class="udesc">Command line, file systems, permissions, processes, package management</span><div class="bar"><div class="fill" style="--w:90%"></div></div></div>
+    <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">linux-admin.service</span><span class="udesc">Users &amp; groups, permissions, ACL, LVM basics, processes, services, logs, cron</span><div class="bar"><div class="fill" style="--w:90%"></div></div></div>
+    <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">distros.service</span><span class="udesc">RHEL, CentOS, Ubuntu, Fedora, Debian, Kali - home lab on VMware, VirtualBox, dual-boot</span><div class="bar"><div class="fill" style="--w:88%"></div></div></div>
     <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">bash-shell.service</span><span class="udesc">Shell usage, scripting fundamentals, terminal workflows</span><div class="bar"><div class="fill" style="--w:85%"></div></div></div>
     <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">python.service</span><span class="udesc">Automation scripts, CLI tools, Tkinter desktop apps</span><div class="bar"><div class="fill" style="--w:80%"></div></div></div>
+    <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">networking.service</span><span class="udesc">TCP/IP, DNS, DHCP, subnetting, SSH, firewall &amp; SELinux basics</span><div class="bar"><div class="fill" style="--w:65%"></div></div></div>
     <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">git-github.service</span><span class="udesc">Version control and project hosting</span><div class="bar"><div class="fill" style="--w:80%"></div></div></div>
+    <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">databases.service</span><span class="udesc">MySQL, PostgreSQL basics</span><div class="bar"><div class="fill" style="--w:60%"></div></div></div>
     <div class="unit"><span class="state warn">&#9679; learning</span><span class="uname">docker.service</span><span class="udesc">Containers - fundamentals</span><div class="bar"><div class="fill" style="--w:45%"></div></div></div>
     <div class="unit"><span class="state warn">&#9679; learning</span><span class="uname">kubernetes.service</span><span class="udesc">Orchestration - fundamentals</span><div class="bar"><div class="fill" style="--w:35%"></div></div></div>
     <div class="unit"><span class="state warn">&#9679; learning</span><span class="uname">aws-cloud.service</span><span class="udesc">Cloud basics</span><div class="bar"><div class="fill" style="--w:40%"></div></div></div>
-    <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">networking.service</span><span class="udesc">TCP/IP, DNS, basic troubleshooting</span><div class="bar"><div class="fill" style="--w:60%"></div></div></div>
     <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">web-dev.service</span><span class="udesc">HTML, CSS, JavaScript</span><div class="bar"><div class="fill" style="--w:75%"></div></div></div>
     <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">sql.service</span><span class="udesc">Queries and data analysis basics</span><div class="bar"><div class="fill" style="--w:65%"></div></div></div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
+<section id="projects" class="reveal">
   <h2 class="sec"><span class="prompt">akash@portfolio:~$</span> ls -la ~/projects</h2>
 
   <div class="proj-grid">
@@ -197,7 +210,7 @@
 </section>
 
 <!-- CERTIFICATES -->
-<section id="certificates">
+<section id="certificates" class="reveal">
   <h2 class="sec"><span class="prompt">akash@portfolio:~$</span> ls ~/certificates</h2>
   <div class="cert-grid">
     <figure class="cert"><img src="AI_APPRECIATE_CERTIFICATE.png" alt="AI Appreciate certificate" loading="lazy"><figcaption>AI Appreciate</figcaption></figure>
@@ -217,7 +230,7 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="reveal">
   <h2 class="sec"><span class="prompt">akash@portfolio:~$</span> cat contact.json</h2>
   <div class="term-window">
     <div class="term-titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">contact.json</span></div>
@@ -227,6 +240,7 @@
   <span class="ck">"email"</span>:    <a href="mailto:akashvishwakarma1262@gmail.com"><span class="cs">"akashvishwakarma1262@gmail.com"</span></a>,
   <span class="ck">"phone"</span>:    <a href="tel:+919918331262"><span class="cs">"+91 9918331262"</span></a>,
   <span class="ck">"github"</span>:   <a href="https://github.com/AKASH991833" target="_blank" rel="noopener"><span class="cs">"github.com/AKASH991833"</span></a>,
+  <span class="ck">"linkedin"</span>: <a href="https://linkedin.com/in/akash-vishwakarma-48b176258" target="_blank" rel="noopener"><span class="cs">"linkedin.com/in/akash-vishwakarma-48b176258"</span></a>,
   <span class="ck">"location"</span>: <span class="cs">"Mumbai, India"</span>,
   <span class="ck">"open_to"</span>:  <span class="cs">"Linux System Administrator / Junior DevOps / Cloud Support roles"</span>
 }</pre>
@@ -238,7 +252,15 @@
 </main>
 
 <footer>
-  <span class="prompt">akash@portfolio:~$</span> logout <span class="dim">&copy; 2026 Akash Vishwakarma - session closed</span><span class="cursor">&#9608;</span>
+  <div class="foot-line"><span class="prompt">akash@portfolio:~$</span> ./connect.sh --social</div>
+  <div class="social-row">
+    <a href="https://github.com/AKASH991833" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i><span>github</span></a>
+    <a href="https://linkedin.com/in/akash-vishwakarma-48b176258" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i><span>linkedin</span></a>
+    <a href="https://www.instagram.com/krish_20_vis/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i><span>instagram</span></a>
+    <a href="https://www.facebook.com/profile.php?id=100057371780310" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i><span>facebook</span></a>
+    <a href="https://twitter.com/akashvishwakarma" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i><span>twitter</span></a>
+  </div>
+  <div class="foot-line dim">&copy; 2026 Akash Vishwakarma - session closed</div>
 </footer>
 
 <!-- Lightbox -->
@@ -250,6 +272,29 @@
 </div>
 
 <script>
+// matrix rain (subtle)
+(function(){
+  var c = document.getElementById('matrix'), x = c.getContext('2d');
+  var cols, drops, fs = 14;
+  function size(){
+    c.width = innerWidth; c.height = innerHeight;
+    cols = Math.floor(c.width / fs);
+    drops = Array(cols).fill(1);
+  }
+  size(); addEventListener('resize', size);
+  var chars = '01<>/;$#[]{}~|=+-*';
+  setInterval(function(){
+    if (document.hidden) return;
+    x.fillStyle = 'rgba(10,15,10,0.08)'; x.fillRect(0,0,c.width,c.height);
+    x.fillStyle = '#1fae4a'; x.font = fs + 'px monospace';
+    for (var i = 0; i < drops.length; i++){
+      x.fillText(chars[Math.random()*chars.length|0], i*fs, drops[i]*fs);
+      if (drops[i]*fs > c.height && Math.random() > 0.985) drops[i] = 0;
+      drops[i]++;
+    }
+  }, 90);
+})();
+
 // boot sequence
 (function(){
   var lines = [
@@ -282,6 +327,54 @@
   });
 })();
 
+// clock
+(function(){
+  var el = document.getElementById('clock');
+  function tick(){ el.textContent = new Date().toLocaleTimeString('en-GB'); }
+  tick(); setInterval(tick, 1000);
+})();
+
+// interactive terminal
+(function(){
+  var input = document.getElementById('tty-in'), out = document.getElementById('tty-out');
+  var cmds = {
+    help: "available: whoami, role, skills, projects, certificates, social, resume, contact, date, clear, exit",
+    whoami: "visitor - but this site belongs to Akash Vishwakarma",
+    role: "Linux System Administrator | Junior DevOps | Cloud Support",
+    skills: "linux, bash, python, git, mysql/postgresql, networking, docker*, aws*, kubernetes*  (* = learning)",
+    projects: "12 public builds - scroll to ~/projects or run: open projects",
+    certificates: "13 certificates - scroll to ~/certificates",
+    social: "github.com/AKASH991833 | linkedin.com/in/akash-vishwakarma-48b176258 | instagram.com/krish_20_vis",
+    resume: "opening resume... (or click the '$ wget resume.pdf' button above)",
+    contact: "akashvishwakarma1262@gmail.com | +91 9918331262 | Mumbai, India",
+    exit: "there is no escape. the terminal is eternal.",
+    sudo: "permission denied: nice try."
+  };
+  function print(t){
+    var d = document.createElement('div');
+    d.className = 'out tty-resp';
+    d.textContent = t;
+    out.appendChild(d);
+  }
+  input.addEventListener('keydown', function(e){
+    if (e.key !== 'Enter') return;
+    var raw = input.value.trim(), v = raw.toLowerCase();
+    var echo = document.createElement('div');
+    echo.className = 'line';
+    echo.innerHTML = '<span class="prompt">visitor@portfolio:~$</span> ';
+    echo.appendChild(document.createTextNode(raw));
+    out.appendChild(echo);
+    input.value = '';
+    if (!v) return;
+    if (v === 'clear'){ out.innerHTML = ''; return; }
+    if (v === 'date'){ print(new Date().toString()); return; }
+    if (v === 'open projects'){ document.getElementById('projects').scrollIntoView({behavior:'smooth'}); return; }
+    if (v === 'resume'){ print(cmds.resume); window.open('Akash_Vishwakarma_Resume.pdf','_blank'); return; }
+    if (cmds[v]){ print(cmds[v]); return; }
+    print("command not found: " + v + " - try 'help'");
+  });
+})();
+
 // menu toggle
 document.getElementById('menuToggle').addEventListener('click', function(){
   document.getElementById('nav').classList.toggle('open');
@@ -302,11 +395,15 @@ document.querySelectorAll('.cert img').forEach(function(img){
 lb.addEventListener('click', function(){ lb.classList.remove('open'); });
 document.addEventListener('keydown', function(e){ if (e.key === 'Escape') lb.classList.remove('open'); });
 
-// skill bars animate on scroll
+// reveal + skill bars on scroll
 var io = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){ if (e.isIntersecting){ e.target.querySelectorAll('.fill').forEach(function(f){ f.style.width = getComputedStyle(f).getPropertyValue('--w'); }); } });
-}, {threshold: .2});
-io.observe(document.querySelector('.units'));
+  entries.forEach(function(e){
+    if (!e.isIntersecting) return;
+    e.target.classList.add('visible');
+    e.target.querySelectorAll('.fill').forEach(function(f){ f.style.width = getComputedStyle(f).getPropertyValue('--w'); });
+  });
+}, {threshold: .15});
+document.querySelectorAll('.reveal, .units').forEach(function(el){ io.observe(el); });
 </script>
 </body>
 </html>
