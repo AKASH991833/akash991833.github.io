@@ -1,1256 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Akash Vishwakarma - Tech enthusiast skilled in Web Development, Python, Ethical Hacking, and AI.">
-    <meta name="keywords" content="Akash Vishwakarma, Portfolio, Web Developer, Ethical Hacking, Python, JavaScript, AI">
-    <meta name="author" content="Akash Vishwakarma">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="krish.jpg">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://akash991833.github.io/portfolio/">
-    <meta property="og:title" content="Akash Vishwakarma | Portfolio">
-    <meta property="og:description" content="Tech enthusiast skilled in Web Development, Python, Ethical Hacking, and AI.">
-    <meta property="og:image" content="https://akash991833.github.io/portfolio/krish.jpg">
-    
-    <!-- Twitter Card -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://akash991833.github.io/portfolio/">
-    <meta property="twitter:title" content="Akash Vishwakarma | Portfolio">
-    <meta property="twitter:description" content="Tech enthusiast skilled in Web Development, Python, Ethical Hacking, and AI.">
-    <meta property="twitter:image" content="https://akash991833.github.io/portfolio/krish.jpg">
-    
-    <title>Akash Vishwakarma | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="particle-network.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Akash Vishwakarma - Aspiring Linux System Administrator. Linux, Python and automation. Exploring Docker, AWS and Kubernetes. Mumbai.">
+<meta name="author" content="Akash Vishwakarma">
+<title>akash@linux:~$ | Akash Vishwakarma</title>
+<link rel="icon" type="image/x-icon" href="krish.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="terminal.css">
 </head>
-
 <body>
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-content">
-            <div class="preloader-logo">AKASH</div>
-            <div class="loader"></div>
-            <p class="preloader-text">Loading Portfolio...</p>
-        </div>
+
+<!-- Boot screen -->
+<div id="boot" aria-hidden="true">
+<pre id="boot-log"></pre>
+</div>
+
+<div class="crt" aria-hidden="true"></div>
+
+<!-- Status bar -->
+<header class="statusbar">
+  <a class="host" href="#home"><span class="user">akash</span><span class="at">@</span><span class="machine">portfolio</span><span class="path">:~$</span></a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">[menu]</button>
+  <nav id="nav">
+    <a href="#home">~/home</a>
+    <a href="#about">~/about</a>
+    <a href="#skills">~/skills</a>
+    <a href="#projects">~/projects</a>
+    <a href="#certificates">~/certificates</a>
+    <a href="#contact">~/contact</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="term-window">
+    <div class="term-titlebar">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="term-title">akash@portfolio: ~</span>
     </div>
-
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- Back to Top Button -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
+    <div class="term-body" id="hero-term">
+      <div class="line"><span class="prompt">akash@portfolio:~$</span> <span class="cmd" data-type="whoami"></span></div>
+      <div class="out">Akash Vishwakarma</div>
+      <div class="line"><span class="prompt">akash@portfolio:~$</span> <span class="cmd" data-type="cat role.txt"></span></div>
+      <div class="out big">Linux System Administrator <span class="dim">(Fresher)</span></div>
+      <div class="out big dim2">Junior DevOps &nbsp;|&nbsp; Cloud Support</div>
+      <div class="line"><span class="prompt">akash@portfolio:~$</span> <span class="cmd" data-type="cat location.txt"></span></div>
+      <div class="out">Mumbai, India</div>
+      <div class="line"><span class="prompt">akash@portfolio:~$</span> <span class="cmd" data-type="./status.sh"></span></div>
+      <div class="out"><span class="ok">[ OK ]</span> Strong grip on core Linux concepts</div>
+      <div class="out"><span class="ok">[ OK ]</span> Python &amp; automation</div>
+      <div class="out"><span class="ok">[ OK ]</span> Docker, AWS, Kubernetes - fundamentals</div>
+      <div class="out"><span class="ok">[ OK ]</span> Networking basics</div>
+      <div class="out"><span class="run">[ .. ]</span> First Linux admin role - <span class="amber">actively looking</span></div>
+      <div class="line cursor-line"><span class="prompt">akash@portfolio:~$</span> <span class="cursor">&#9608;</span></div>
     </div>
+  </div>
+  <div class="hero-actions">
+    <a class="btn" href="#projects">$ ./view_projects.sh</a>
+    <a class="btn amber" href="cv.pdf" target="_blank" rel="noopener">$ wget resume.pdf</a>
+    <a class="btn ghost" href="#contact">$ ./contact.sh</a>
+  </div>
+</section>
 
-    <!-- Header -->
-    <header>
-        <a href="#home" class="logo" aria-label="Akash Vishwakarma - Home">Akash Vishwakarma</a>
-        <button class="menu-btn" aria-label="Toggle Navigation Menu">
-            <i class="fas fa-bars" aria-hidden="true"></i>
-        </button>
-        <nav class="navbar" aria-label="Main Navigation">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#ai">AI Productivity Tools</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <!-- Video Background -->
-        <div class="video-background">
-            <video autoplay muted loop playsinline id="hero-video" preload="auto" poster="">
-                <source src="https://cdn.pixabay.com/video/2020/05/25/39399-426373828_large.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-overlay"></div>
-        </div>
-
-        <div class="hero-content">
-            <h1>Hi, I'm <span>Akash Vishwakarma</span></h1>
-            <h2 class="typing-text">@TechCurious | Learner & Web Explorer</h2>
-            <p>
-                I'm a self-driven tech enthusiast with a growing grip on web development using HTML, CSS, and
-                JavaScript. I explore new technologies every day and have intermediate skills in HTML, CSS, JavaScript,
-                plus Python and ethical hacking. Always curious, always learning.
-            </p>
-
-            <div class="btn-box">
-                <a href="#projects" class="btn">View My Projects</a>
-                <a href="#contact" class="btn btn-outline">Let's Talk</a>
-            </div>
-        </div>
-        
-        <!-- Code Editor Animation (Right Side) -->
-        <div class="hero-visual" aria-hidden="true">
-            <div class="code-editor">
-                <div class="editor-header">
-                    <div class="editor-buttons">
-                        <span class="btn-close"></span>
-                        <span class="btn-minimize"></span>
-                        <span class="btn-maximize"></span>
-                    </div>
-                    <div class="editor-title">
-                        <i class="fas fa-code"></i>
-                        <span>portfolio.js</span>
-                    </div>
-                </div>
-                <div class="editor-body">
-                    <pre><code id="typewriter-code"></code></pre>
-                    <div class="cursor-blink"></div>
-                </div>
-                <div class="editor-footer">
-                    <div class="editor-status">
-                        <span class="status-item"><i class="fas fa-code-branch"></i> main</span>
-                        <span class="status-item"><i class="fas fa-check-circle"></i> Prettier</span>
-                    </div>
-                    <div class="editor-info">
-                        <span class="lang-badge">JavaScript</span>
-                        <span class="line-col">Ln <span id="line-num">1</span>, Col <span id="col-num">1</span></span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Floating Code Snippets -->
-            <div class="floating-code floating-code-1">
-                <span class="code-tag">&lt;Developer /&gt;</span>
-            </div>
-            <div class="floating-code floating-code-2">
-                <span class="code-tag">const skills = ['Web Dev', 'Python', 'AI'];</span>
-            </div>
-            <div class="floating-code floating-code-3">
-                <span class="code-tag">console.log('Hello World');</span>
-            </div>
-        </div>
-        
-        <div class="particles" id="particles-js" aria-hidden="true"></div>
-        <div class="particle-network-animation" aria-hidden="true"></div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-container">
-            <!-- Left Side - Image -->
-            <div class="about-left">
-                <div class="about-image-wrapper">
-                    <div class="about-image-glow"></div>
-                    <img src="krish.jpg" alt="Akash Vishwakarma" class="about-image">
-                    <div class="about-badge">
-                        <span class="badge-text">Available for Work</span>
-                    </div>
-                </div>
-                
-                <!-- Quick Info Cards -->
-                <div class="about-info-cards">
-                    <div class="info-card">
-                        <i class="fas fa-graduation-cap"></i>
-                        <div>
-                            <h4>Education</h4>
-                            <p>BCA Student</p>
-                        </div>
-                    </div>
-                    <div class="info-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Thane, Maharashtra</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Action Buttons -->
-                <div class="about-actions">
-                    <a href="cv.pdf" class="btn" download>
-                        <i class="fas fa-download"></i> Download CV
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <i class="fas fa-envelope"></i> Contact Me
-                    </a>
-                </div>
-            </div>
-
-            <!-- Right Side - Content -->
-            <div class="about-right">
-                <div class="about-header">
-                    <span class="about-subtitle">Get to know me</span>
-                    <h2>About <span>Me</span></h2>
-                </div>
-
-                <div class="about-description">
-                    <p class="intro-text">
-                        Hi, I'm <strong>Akash Vishwakarma</strong> - a passionate 
-                        <span class="highlight">Tech Enthusiast</span> and 
-                        <span class="highlight">Developer</span> based in India.
-                    </p>
-                    
-                    <p>
-                        Recently completed my <strong>BCA</strong>, I have a deep passion for 
-                        <strong>Web Development</strong>, <strong>Data Analysis</strong>, and 
-                        <strong>Linux & Hacking</strong>. I love exploring new technologies and 
-                        building innovative projects that solve real-world problems.
-                    </p>
-
-                    <p>
-                        When I'm not coding, you'll find me exploring Windows and operating systems, contributing
-                        to open-source projects, or learning about the latest in 
-                        <strong>Artificial Intelligence</strong>.
-                    </p>
-                </div>
-
-                <!-- Tech Stack -->
-                <div class="tech-stack">
-                    <h3 class="stack-title">My Tech Stack</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Python</span>                   
-                        <span class="tech-tag">AI Tools</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Windows,linux</span>
-                        <span class="tech-tag">Full Stack Development Using Using AI</span>
-                        <span class="tech-tag">Excel</span>
-                        <span class="tech-tag">Power BI</span>
-                        <span class="tech-tag">Microsoft Office</span>
-                    </div>
-                </div>
-
-                <!-- What I Do -->
-                <div class="what-i-do">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-code" aria-hidden="true"></i>
-                        </div>
-                        <h3>Web Development</h3>
-                        <p>Building responsive and modern websites</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                        </div>
-                        <h3>Data Analysis</h3>
-                        <p>Analyzing data to derive meaningful insights</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-robot" aria-hidden="true"></i>
-                        </div>
-                        <h3>AI Integration</h3>
-                        <p>Using AI to enhance productivity</p>
-                    </div>
-                </div>
-
-                <!-- Personal Info -->
-                <div class="personal-info">
-                    <div class="info-row">
-                        <span class="info-label"><i class="fas fa-envelope" aria-hidden="true"></i> Email:</span>
-                        <a href="mailto:akashvishwakarma1262@gmail.com" class="info-value">akashvishwakarma1262@gmail.com</a>
-                    </div>
-                    <div class="info-row">
-                        <span class="info-label"><i class="fas fa-phone" aria-hidden="true"></i> Phone:</span>
-                        <a href="tel:+919918331262" class="info-value">+91 9918331262</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="wave-divider wave-divider-top" aria-hidden="true">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path class="wave-path" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"/>
-            </svg>
-        </div>
-        <h2>My <span>Skills</span></h2>
-        <div class="skills-container">
-            <!-- Visible Skills (5) -->
-            <button class="skill-card glass"
-                onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/HTML', '_blank')"
-                aria-label="Learn more about HTML5">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="" aria-hidden="true"
-                    style="width: 50px; height: 50px; margin-bottom: 20px;">
-                <h3>HTML5</h3>
-                <p>Semantic markup, accessibility standards, and modern HTML5 features.</p>
-            </button>
-            <button class="skill-card glass"
-                onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/CSS', '_blank')"
-                aria-label="Learn more about CSS3">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="" aria-hidden="true"
-                    style="width: 50px; height: 50px; margin-bottom: 20px;">
-                <h3>CSS3</h3>
-                <p>Responsive design, animations, flexbox, grid, and CSS frameworks.</p>
-            </button>
-            <button class="skill-card glass"
-                onclick="window.open('https://developer.mozilla.org/en-US/docs/Web/JavaScript', '_blank')"
-                aria-label="Learn more about JavaScript">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                    alt="" aria-hidden="true" style="width: 50px; height: 50px; margin-bottom: 20px;">
-                <h3>JavaScript</h3>
-                <p>ES6+, DOM manipulation, async programming, and modern frameworks.</p>
-            </button>
-            <button class="skill-card glass" onclick="window.open('https://docs.python.org/3/', '_blank')"
-                aria-label="Learn more about Python">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" aria-hidden="true"
-                    style="width: 50px; height: 50px; margin-bottom: 20px;">
-                <h3>Python</h3>
-                <p>Scripting, automation, data structures, and basic application development.</p>
-            </button>
-            <button class="skill-card glass" onclick="window.open('https://devdocs.io/c/', '_blank')"
-                aria-label="Learn more about C Programming">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="" aria-hidden="true"
-                    style="width: 50px; height: 50px; margin-bottom: 20px;">
-                <h3>C Programming</h3>
-                <p>Basic programming concepts, algorithms, and problem-solving skills.</p>
-            </button>
-            <!-- Hidden Skills (7) -->
-            <button class="skill-card glass hidden-skill" onclick="window.open('https://learn.microsoft.com/en-us/windows/', '_blank')"
-                aria-label="Learn more about Computer & OS Knowledge">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg"
-                    alt="" aria-hidden="true" style="width: 50px; height: 50px; margin-bottom: 20px;">
-                <h3>Computer & OS Knowledge</h3>
-                <p>Windows and general operating system knowledge, plus AI-assisted system workflows.</p>
-            </button>
-            <button class="skill-card glass hidden-skill" onclick="window.open('https://www.excel.com/', '_blank')"
-                aria-label="Learn more about Excel">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/excel/excel-original.svg"
-                    alt="" aria-hidden="true" style="width: 50px; height: 50px; margin-bottom: 20px;">
-                <h3>Excel</h3>
-                <p>Data analysis, formulas, and spreadsheets.</p>
-            </button>
-        </div>
-        <div class="view-more-container">
-            <button class="view-more-btn" id="view-more-skills">
-                <span>View More Skills</span>
-                <i class="fas fa-chevron-down"></i>
-            </button>
-        </div>
-    </section>
-
-    <!-- AI Expertise Section -->
-    <section class="ai-section" id="ai">
-        <div class="wave-divider wave-divider-top">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path class="wave-path" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"/>
-            </svg>
-        </div>
-        <h2>AI <span>Productivity Tools</span></h2>
-        <p class="ai-intro">I leverage cutting-edge AI tools and platforms to enhance productivity, solve complex problems, and deliver innovative solutions.</p>
-        
-        <div class="ai-tools-container">
-            <div class="ai-tool-card glass" onclick="openWithConfirm('https://chat.openai.com/')">
-                <div class="ai-icon-wrapper">
-                    <div class="ai-icon-bg"></div>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT">
-                </div>
-                <h3>ChatGPT</h3>
-                <p>Advanced conversations, content creation, coding assistance, and problem-solving</p>
-                <div class="ai-card-footer">
-                    <span class="ai-tag">OpenAI</span>
-                    <span class="ai-usage">Daily</span>
-                </div>
-            </div>
-
-            <div class="ai-tool-card glass" onclick="openWithConfirm('https://www.deepseek.com/')">
-                <div class="ai-icon-wrapper">
-                    <div class="ai-icon-bg"></div>
-                    <img src="https://static.cdnlogo.com/logos/d/9/deepseek.svg" alt="DeepSeek">
-                </div>
-                <h3>Claude code </h3>
-                <p>Deep learning models for complex reasoning and analysis tasks</p>
-                <div class="ai-card-footer">
-                    <span class="ai-tag">Deep Learning</span>
-                    <span class="ai-usage">Advanced</span>
-                </div>
-            </div>
-
-            <div class="ai-tool-card glass" onclick="openWithConfirm('https://copilot.microsoft.com/')">
-                <div class="ai-icon-wrapper">
-                    <div class="ai-icon-bg"></div>
-                    <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/icons/copilot.svg" alt="Copilot">
-                </div>
-                <h3>Copilot</h3>
-                <p>Microsoft's AI assistant for coding, research, and everyday tasks</p>
-                <div class="ai-card-footer">
-                    <span class="ai-tag">Microsoft</span>
-                    <span class="ai-usage">Coding</span>
-                </div>
-            </div>
-
-            <div class="ai-tool-card glass" onclick="openWithConfirm('https://gemini.google.com/')">
-                <div class="ai-icon-wrapper">
-                    <div class="ai-icon-bg"></div>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" alt="Gemini">
-                </div>
-                <h3>Gemini</h3>
-                <p>Google's multimodal AI for creative and analytical workflows</p>
-                <div class="ai-card-footer">
-                    <span class="ai-tag">Google</span>
-                    <span class="ai-usage">Research</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="wave-divider wave-divider-top">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path class="wave-path" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"/>
-            </svg>
-        </div>
-        
-        <div class="projects-header">
-            <h2>My <span>Projects</span></h2>
-            <p class="projects-subtitle">Explore my latest work and creative experiments</p>
-        </div>
-
-        <div class="projects-grid">
-            <!-- Project 1: Calculator -->
-            <div class="project-card pro" data-category="web">
-                <div class="project-image-wrapper">
-                    <div class="project-overlay">
-                        <div class="overlay-content">
-                            <button class="preview-btn" onclick="openProjectModal('calculator')">
-                                <i class="fas fa-eye"></i> Preview
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-badge web">Web App</div>
-                    <img src="https://i.pinimg.com/736x/8e/ad/bd/8eadbd95cbcdda23f44b8c7b05ab7931.jpg" 
-                         alt="Web Calculator" 
-                         class="project-img"
-                         loading="lazy">
-                </div>
-                <div class="project-content">
-                    <div class="project-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3 class="project-title">Web Calculator</h3>
-                    <p class="project-desc">A fully functional calculator with basic arithmetic operations and modern UI design.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">HTML</span>
-                        <span class="tech-badge">CSS</span>
-                        <span class="tech-badge">JavaScript</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://akash991833.github.io/Simple-Web-Calculator/" target="_blank" class="action-btn live">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/AKASH991833/Simple-Web-Calculator" target="_blank" class="action-btn code">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2: Weather App -->
-            <div class="project-card pro" data-category="web">
-                <div class="project-image-wrapper">
-                    <div class="project-overlay">
-                        <div class="overlay-content">
-                            <button class="preview-btn" onclick="openProjectModal('weather')">
-                                <i class="fas fa-eye"></i> Preview
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-badge web">Web App</div>
-                    <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&auto=format&fit=crop" 
-                         alt="Weather Dashboard" 
-                         class="project-img"
-                         loading="lazy">
-                </div>
-                <div class="project-content">
-                    <div class="project-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <h3 class="project-title">Weather Dashboard</h3>
-                    <p class="project-desc">Real-time weather application using OpenWeatherMap API with location-based forecasts.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">HTML</span>
-                        <span class="tech-badge">CSS</span>
-                        <span class="tech-badge">JavaScript</span>
-                        <span class="tech-badge">API</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://akash991833.github.io/Weather_Website/" target="_blank" class="action-btn live">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/AKASH991833/Weather_Website" target="_blank" class="action-btn code">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3: Timer -->
-            <div class="project-card pro" data-category="web">
-                <div class="project-image-wrapper">
-                    <div class="project-overlay">
-                        <div class="overlay-content">
-                            <button class="preview-btn" onclick="openProjectModal('timer')">
-                                <i class="fas fa-eye"></i> Preview
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-badge web">Web App</div>
-                    <img src="https://images.unsplash.com/photo-1508962914676-134849a727f0?w=800&auto=format&fit=crop" 
-                         alt="Modern Timer" 
-                         class="project-img"
-                         loading="lazy">
-                </div>
-                <div class="project-content">
-                    <div class="project-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="far fa-star"></i>
-                    </div>
-                    <h3 class="project-title">Modern Timer</h3>
-                    <p class="project-desc">A sleek and modern timer with stopwatch, countdown, and multiple timer features.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">HTML</span>
-                        <span class="tech-badge">CSS</span>
-                        <span class="tech-badge">JavaScript</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://akash991833.github.io/Modern-Timer/" target="_blank" class="action-btn live disabled">
-                            <i class="fas fa-lock"></i> Live Demo
-                        </a>
-                        <a href="#" target="_blank" class="action-btn code disabled">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4: Password Generator -->
-            <div class="project-card pro" data-category="web">
-                <div class="project-image-wrapper">
-                    <div class="project-overlay">
-                        <div class="overlay-content">
-                            <button class="preview-btn" onclick="openProjectModal('password')">
-                                <i class="fas fa-eye"></i> Preview
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-badge web">Web App</div>
-                    <img src="https://i.pinimg.com/736x/68/11/54/681154895992fda639bcf1642cdddb12.jpg" 
-                         alt="Password Generator" 
-                         class="project-img"
-                         loading="lazy">
-                </div>
-                <div class="project-content">
-                    <div class="project-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3 class="project-title">Password Generator</h3>
-                    <p class="project-desc">Generate secure, random passwords with customizable length and character options.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">HTML</span>
-                        <span class="tech-badge">CSS</span>
-                        <span class="tech-badge">JavaScript</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="random-password.html" target="_blank" class="action-btn live">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="https://github.com/AKASH991833" target="_blank" class="action-btn code">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 6: Duplicate File Remover -->
-            <div class="project-card pro hidden-project" data-category="python">
-                <div class="project-image-wrapper">
-                    <div class="project-overlay">
-                        <div class="overlay-content">
-                            <button class="preview-btn" onclick="openProjectModal('duplicate')">
-                                <i class="fas fa-eye"></i> Preview
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-badge python">Python</div>
-                    <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=800&h=600&fit=crop&q=80"
-                         alt="Duplicate File Remover"
-                         class="project-img"
-                         loading="lazy">
-                </div>
-                <div class="project-content">
-                    <div class="project-rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h3 class="project-title">Duplicate File Remover</h3>
-                    <p class="project-desc">Windows application that scans and removes duplicate files to free up storage space.</p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">PyInstaller</span>
-                        <span class="tech-badge">Windows</span>
-                    </div>
-                    <div class="project-actions">
-                        <a href="https://github.com/AKASH991833/duplicate-file-remover/raw/main/DuplicateFileRemover.exe" target="_blank" class="action-btn live">
-                            <i class="fas fa-download"></i> Download .EXE
-                        </a>
-                        <a href="https://github.com/AKASH991833/duplicate-file-remover" target="_blank" class="action-btn code">
-                            <i class="fab fa-github"></i> Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="view-more-container">
-            <button class="view-more-btn" id="view-more-projects">
-                <span>View More Projects</span>
-                <i class="fas fa-chevron-down"></i>
-            </button>
-        </div>
-    </section>
-
-    <!-- Project Preview Modal -->
-    <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeProjectModal()">&times;</span>
-            <div class="modal-body" id="modal-body">
-                <!-- Dynamic content will be loaded here -->
-            </div>
-        </div>
+<!-- ABOUT / neofetch -->
+<section id="about">
+  <h2 class="sec"><span class="prompt">akash@portfolio:~$</span> neofetch</h2>
+  <div class="neofetch">
+    <pre class="ascii" aria-hidden="true">
+        <span class="penguin">
+    .--.
+   |o_o |
+   |:_/ |
+  //   \ \
+ (|     | )
+/'\_   _/`\
+\___)=(___/</span></pre>
+    <div class="nf-info">
+      <div><span class="k">User</span><span class="sep">:</span> Akash Vishwakarma</div>
+      <div><span class="k">Role</span><span class="sep">:</span> Aspiring Linux System Administrator</div>
+      <div><span class="k">Also fits</span><span class="sep">:</span> Junior DevOps, Cloud Support</div>
+      <div><span class="k">Location</span><span class="sep">:</span> Mumbai, India</div>
+      <div><span class="k">Shell</span><span class="sep">:</span> bash, python</div>
+      <div><span class="k">Stack</span><span class="sep">:</span> Linux, Python, Docker, AWS, Kubernetes</div>
+      <div><span class="k">Interests</span><span class="sep">:</span> automation, ethical hacking, AI tooling</div>
+      <div><span class="k">Uptime</span><span class="sep">:</span> learning every single day</div>
+      <div class="nf-note"># I use Linux daily and love the terminal. I build small tools to automate
+# real work, and I use AI to move faster. Looking for my first role where
+# I can keep servers - and myself - learning.</div>
     </div>
+  </div>
+</section>
 
-    <!-- Certifications Section -->
-    <section class="certifications" id="certifications">
-        <h2>My <span>Certifications</span></h2>
-        <div class="certifications-container">
-            <!-- Visible Certifications (5) -->
-            <div class="certification-card certification-item">
-                <img src="AI_APPRECIATE_BADGE.png" alt="AI Appreciate Badge">
-                <h3>AI Appreciate</h3>
-                <p>Awarded for demonstrating a strong understanding of AI concepts and applications.</p>
-            </div>
-            <div class="certification-card certification-item">
-                <img src="AI_AWARE_BADGE.png" alt="AI Aware Badge">
-                <h3>AI Aware</h3>
-                <p>Recognized for awareness of AI trends and technologies.</p>
-            </div>
-            <div class="certification-card certification-item">
-                <img src="Data Analysis_Deloitte.jpg" alt="Data Analysis">
-                <h3>Data Analysis</h3>
-                <p>Completed a course on data analysis from Deloitte.</p>
-            </div>
-            <div class="certification-card certification-item">
-                <img src="CHATGPT_FOR_DA.jpg" alt="ChatGPT for DA">
-                <h3>ChatGPT for Data Analysis</h3>
-                <p>Certified in using ChatGPT for data analysis tasks.</p>
-            </div>
-            <!-- Hidden Certifications (10) -->
-            <div class="certification-card certification-item hidden-certification">
-                <img src="AI_APPRECIATE_CERTIFICATE.png" alt="AI Appreciate Certificate">
-                <h3>AI Appreciation</h3>
-                <p>Certificate of appreciation for AI knowledge.</p>
-            </div>
-            <div class="certification-card certification-item hidden-certification">
-                <img src="HP_page-0001.jpg" alt="HackerRank Problems">
-                <h3>HackerRank Problems</h3>
-                <p>Solved various coding problems on HackerRank platform.</p>
-            </div>
-            <div class="certification-card certification-item hidden-certification">
-                <img src="SQL_FOR_DA_page-0001.jpg" alt="SQL for Data Analysis">
-                <h3>SQL for Data Analysis</h3>
-                <p>Data analysis projects using SQL queries and database management.</p>
-            </div>
-            <div class="certification-card certification-item hidden-certification">
-                <img src="AI_AWARE_CERTIFICATE.png" alt="AI Aware Certificate">
-                <h3>AI Awareness</h3>
-                <p>Certificate of awareness in AI.</p>
-            </div>
-            <div class="certification-card certification-item hidden-certification">
-                <img src="Akash_Internship_Declaration_Letter_Deloitte.jpg" alt="Deloitte Internship Letter">
-                <h3>Internship Declaration</h3>
-                <p>Internship declaration letter from Deloitte.</p>
-            </div>
-            <div class="certification-card certification-item hidden-certification">
-                <img src="Beginners guide to Ethical hacking.jpg" alt="Ethical Hacking">
-                <h3>Ethical Hacking</h3>
-                <p>Beginner's guide to Ethical Hacking completion.</p>
-            </div>
-            <div class="certification-card certification-item hidden-certification">
-                <img src="Introduction to Data Analytics.jpg" alt="Data Analytics Intro">
-                <h3>Intro to Data Analytics</h3>
-                <p>Completion of Introduction to Data Analytics.</p>
-            </div>
-            <div class="certification-card certification-item hidden-certification">
-                <img src="javascript_basic.jpg" alt="JavaScript Basic">
-                <h3>JavaScript (Basic)</h3>
-                <p>Certificate for basic JavaScript skills.</p>
-            </div>
-            <div class="certification-card certification-item hidden-certification">
-                <img src="Python_Basic.jpg" alt="Python Basic">
-                <h3>Python (Basic)</h3>
-                <p>Certificate for basic Python skills.</p>
-            </div>
-            <div class="certification-card certification-item hidden-certification">
-                <img src="SQL_Basic.jpg" alt="SQL Basic">
-                <h3>SQL (Basic)</h3>
-                <p>Certificate for basic SQL skills.</p>
-            </div>
-        </div>
-        <div class="view-more-container">
-            <button class="view-more-btn" id="view-all-certifications">
-                <span>View All Certificates</span>
-                <i class="fas fa-chevron-down"></i>
-            </button>
-        </div>
-    </section>
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="sec"><span class="prompt">akash@portfolio:~$</span> systemctl list-units --type=skill</h2>
+  <div class="units">
+    <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">linux-core.service</span><span class="udesc">Command line, file systems, permissions, processes, package management</span><div class="bar"><div class="fill" style="--w:90%"></div></div></div>
+    <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">bash-shell.service</span><span class="udesc">Shell usage, scripting fundamentals, terminal workflows</span><div class="bar"><div class="fill" style="--w:85%"></div></div></div>
+    <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">python.service</span><span class="udesc">Automation scripts, CLI tools, Tkinter desktop apps</span><div class="bar"><div class="fill" style="--w:80%"></div></div></div>
+    <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">git-github.service</span><span class="udesc">Version control and project hosting</span><div class="bar"><div class="fill" style="--w:80%"></div></div></div>
+    <div class="unit"><span class="state warn">&#9679; learning</span><span class="uname">docker.service</span><span class="udesc">Containers - fundamentals</span><div class="bar"><div class="fill" style="--w:45%"></div></div></div>
+    <div class="unit"><span class="state warn">&#9679; learning</span><span class="uname">kubernetes.service</span><span class="udesc">Orchestration - fundamentals</span><div class="bar"><div class="fill" style="--w:35%"></div></div></div>
+    <div class="unit"><span class="state warn">&#9679; learning</span><span class="uname">aws-cloud.service</span><span class="udesc">Cloud basics</span><div class="bar"><div class="fill" style="--w:40%"></div></div></div>
+    <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">networking.service</span><span class="udesc">TCP/IP, DNS, basic troubleshooting</span><div class="bar"><div class="fill" style="--w:60%"></div></div></div>
+    <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">web-dev.service</span><span class="udesc">HTML, CSS, JavaScript</span><div class="bar"><div class="fill" style="--w:75%"></div></div></div>
+    <div class="unit"><span class="state ok">&#9679; active</span><span class="uname">sql.service</span><span class="udesc">Queries and data analysis basics</span><div class="bar"><div class="fill" style="--w:65%"></div></div></div>
+  </div>
+</section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <h2>Contact <span>Me</span></h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <div class="contact-card glass">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h3>Email</h3>
-                        <p><a href="mailto:akashvishwakarma1262@gmail.com">akashvishwakarma1262@gmail.com</a></p>
-                    </div>
-                </div>
-                <div class="contact-card glass">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <h3>Phone</h3>
-                        <p>+91 9918331262</a></p>
-                    </div>
-                </div>
-                <div class="contact-card glass">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h3>Location</h3>
-                        <p>Hanuman Nagar, Wagle Industrial Estate, Thane West, Thane, Maharashtra </p>
-                    </div>
-                </div>
-                <div class="contact-card glass">
-                    <i class="fab fa-github"></i>
-                    <div>
-                        <h3>GitHub</h3>
-                        <p><a href="https://github.com/AKASH991833" target="_blank">github.com/AKASH991833</a></p>
-                    </div>
-                </div>
-            </div>
-            <!-- Contact Form - Registered with Formspree -->
-            <form class="contact-form glass" action="https://formspree.io/f/xojnpkdk" method="POST">
-                <div class="input-box">
-                    <input type="text" name="name" required>
-                    <label>Full Name</label>
-                </div>
-                <div class="input-box">
-                    <input type="email" name="email" required>
-                    <label>Email</label>
-                </div>
-                <div class="input-box">
-                    <input type="text" name="subject" required>
-                    <label>Subject</label>
-                </div>
-                <div class="input-box">
-                    <textarea name="message" required></textarea>
-                    <label>Your Message</label>
-                </div>
-                <button type="submit" class="form-btn">Send Message</button>
-            </form>
-        </div>
-    </section>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="sec"><span class="prompt">akash@portfolio:~$</span> ls -la ~/projects</h2>
 
-    <!-- Footer -->
-    <footer>
-        <div class="wave-divider wave-divider-top">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path class="wave-path" d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"/>
-            </svg>
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-social">
-                <a href="https://github.com/AKASH991833" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/akashvishwakarma" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://twitter.com/akashvishwakarma" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/krish_20_vis/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=100057371780310" target="_blank"><i class="fab fa-facebook"></i></a>
-            </div>
-            <p>&copy; 2024 Akash Vishwakarma | All Rights Reserved</p>
-            <p class="footer-credits">Made with <i class="fas fa-heart"></i> by Akash Vishwakarma</p>
-        </div>
-    </footer>
+  <div class="proj-grid">
 
-    <div id="lightbox" class="lightbox">
-        <span class="close-btn">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
+    <a class="proj" href="https://github.com/AKASH991833/ShellSense" target="_blank" rel="noopener">
+      <div class="p-head">-rwxr-xr-x <span class="p-name">shellsense</span></div>
+      <div class="p-desc">Python terminal assistant for Linux: command suggestions, fuzzy search and CLI tools.</div>
+      <div class="p-tags">Python &middot; Linux &middot; CLI</div>
+    </a>
+
+    <a class="proj" href="https://github.com/AKASH991833/Furni_Billing_Software" target="_blank" rel="noopener">
+      <div class="p-head">-rwxr-xr-x <span class="p-name">furni-billing-software</span></div>
+      <div class="p-desc">Desktop billing software for a furniture business, with Excel export.</div>
+      <div class="p-tags">Python &middot; Desktop &middot; Excel</div>
+    </a>
+
+    <a class="proj" href="https://github.com/AKASH991833/AC_Service_Management" target="_blank" rel="noopener">
+      <div class="p-head">-rwxr-xr-x <span class="p-name">ac-service-management</span></div>
+      <div class="p-desc">AC service business project: customer website plus desktop billing software.</div>
+      <div class="p-tags">Web &middot; Desktop &middot; Business</div>
+    </a>
+
+    <a class="proj" href="https://github.com/AKASH991833/anshaircool.com" target="_blank" rel="noopener">
+      <div class="p-head">-rwxr-xr-x <span class="p-name">anshaircool.com</span></div>
+      <div class="p-desc">Business website for Ansh Air Cool with frontend and backend code.</div>
+      <div class="p-tags">Web &middot; Frontend &middot; Backend</div>
+    </a>
+
+    <a class="proj" href="https://github.com/AKASH991833/Carpenter_Website" target="_blank" rel="noopener">
+      <div class="p-head">-rwxr-xr-x <span class="p-name">carpenter-website</span></div>
+      <div class="p-desc">Next.js + TypeScript platform for contractors to present their work.</div>
+      <div class="p-tags">Next.js &middot; TypeScript</div>
+    </a>
+
+    <a class="proj" href="https://github.com/AKASH991833/duplicate-file-remover" target="_blank" rel="noopener">
+      <div class="p-head">-rwxr-xr-x <span class="p-name">duplicate-file-remover</span></div>
+      <div class="p-desc">Python/Tkinter tool that finds duplicate files and lets you choose what to remove.</div>
+      <div class="p-tags">Python &middot; Tkinter</div>
+    </a>
+
+    <a class="proj" href="https://github.com/AKASH991833/File-Organizer" target="_blank" rel="noopener">
+      <div class="p-head">-rwxr-xr-x <span class="p-name">file-organizer</span></div>
+      <div class="p-desc">Python utility that sorts messy folders into organized directories.</div>
+      <div class="p-tags">Python &middot; Automation</div>
+    </a>
+
+    <a class="proj" href="https://github.com/AKASH991833/Attendence_management_sys" target="_blank" rel="noopener">
+      <div class="p-head">-rwxr-xr-x <span class="p-name">attendance-management</span></div>
+      <div class="p-desc">Attendance management system with teacher and super-admin workflows.</div>
+      <div class="p-tags">Python &middot; Management System</div>
+    </a>
+
+    <a class="proj" href="https://github.com/AKASH991833/Weather_Website" target="_blank" rel="noopener">
+      <div class="p-head">-rwxr-xr-x <span class="p-name">weather-website</span></div>
+      <div class="p-desc">Weather app with forecasts and air-quality info; Node.js API + JS frontend.</div>
+      <div class="p-tags">Node.js &middot; JavaScript &middot; API</div>
+    </a>
+
+    <a class="proj" href="https://github.com/AKASH991833/Data_Analysis_using-Ai" target="_blank" rel="noopener">
+      <div class="p-head">-rwxr-xr-x <span class="p-name">data-analysis-ai</span></div>
+      <div class="p-desc">Next.js project for dataset exploration and visualizations.</div>
+      <div class="p-tags">Next.js &middot; Data</div>
+    </a>
+
+    <a class="proj" href="https://github.com/AKASH991833/Modern-Timer" target="_blank" rel="noopener">
+      <div class="p-head">-rwxr-xr-x <span class="p-name">modern-timer</span></div>
+      <div class="p-desc">Stopwatch and countdown timer in the browser.</div>
+      <div class="p-tags">HTML &middot; CSS &middot; JavaScript</div>
+    </a>
+
+    <a class="proj" href="https://github.com/AKASH991833/Simple-Web-Calculator" target="_blank" rel="noopener">
+      <div class="p-head">-rwxr-xr-x <span class="p-name">web-calculator</span></div>
+      <div class="p-desc">Calculator and small utility tools built with JavaScript.</div>
+      <div class="p-tags">JavaScript</div>
+    </a>
+
+  </div>
+  <div class="more-repos">$ git clone <a href="https://github.com/AKASH991833?tab=repositories" target="_blank" rel="noopener">github.com/AKASH991833</a> <span class="dim"># more experiments on GitHub</span></div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates">
+  <h2 class="sec"><span class="prompt">akash@portfolio:~$</span> ls ~/certificates</h2>
+  <div class="cert-grid">
+    <figure class="cert"><img src="AI_APPRECIATE_CERTIFICATE.png" alt="AI Appreciate certificate" loading="lazy"><figcaption>AI Appreciate</figcaption></figure>
+    <figure class="cert"><img src="AI_AWARE_CERTIFICATE.png" alt="AI Aware certificate" loading="lazy"><figcaption>AI Aware</figcaption></figure>
+    <figure class="cert"><img src="Data%20Analysis_Deloitte.jpg" alt="Data Analysis certificate - Deloitte" loading="lazy"><figcaption>Data Analysis - Deloitte</figcaption></figure>
+    <figure class="cert"><img src="CHATGPT_FOR_DA.jpg" alt="ChatGPT for Data Analysis certificate" loading="lazy"><figcaption>ChatGPT for Data Analysis</figcaption></figure>
+    <figure class="cert"><img src="SQL_FOR_DA_page-0001.jpg" alt="SQL for Data Analysis certificate" loading="lazy"><figcaption>SQL for Data Analysis</figcaption></figure>
+    <figure class="cert"><img src="Introduction%20to%20Data%20Analytics.jpg" alt="Introduction to Data Analytics certificate" loading="lazy"><figcaption>Intro to Data Analytics</figcaption></figure>
+    <figure class="cert"><img src="Python_Basic.jpg" alt="Python Basic certificate" loading="lazy"><figcaption>Python (Basic)</figcaption></figure>
+    <figure class="cert"><img src="SQL_Basic.jpg" alt="SQL Basic certificate" loading="lazy"><figcaption>SQL (Basic)</figcaption></figure>
+    <figure class="cert"><img src="javascript_basic.jpg" alt="JavaScript Basic certificate" loading="lazy"><figcaption>JavaScript (Basic)</figcaption></figure>
+    <figure class="cert"><img src="Beginners%20guide%20to%20Ethical%20hacking.jpg" alt="Beginners guide to Ethical Hacking certificate" loading="lazy"><figcaption>Ethical Hacking (Beginner)</figcaption></figure>
+    <figure class="cert"><img src="MS_EXCEL_page-0001.jpg" alt="MS Excel certificate" loading="lazy"><figcaption>MS Excel</figcaption></figure>
+    <figure class="cert"><img src="HP_page-0001.jpg" alt="HackerRank problem solving" loading="lazy"><figcaption>HackerRank - Problem Solving</figcaption></figure>
+    <figure class="cert"><img src="Akash_Internship_Declaration_Letter_Deloitte.jpg" alt="Deloitte internship declaration letter" loading="lazy"><figcaption>Internship Declaration - Deloitte</figcaption></figure>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="sec"><span class="prompt">akash@portfolio:~$</span> cat contact.json</h2>
+  <div class="term-window">
+    <div class="term-titlebar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title">contact.json</span></div>
+    <div class="term-body contact-body">
+<pre>{
+  <span class="ck">"name"</span>:     <span class="cs">"Akash Vishwakarma"</span>,
+  <span class="ck">"email"</span>:    <a href="mailto:akashvishwakarma1262@gmail.com"><span class="cs">"akashvishwakarma1262@gmail.com"</span></a>,
+  <span class="ck">"phone"</span>:    <a href="tel:+919918331262"><span class="cs">"+91 9918331262"</span></a>,
+  <span class="ck">"github"</span>:   <a href="https://github.com/AKASH991833" target="_blank" rel="noopener"><span class="cs">"github.com/AKASH991833"</span></a>,
+  <span class="ck">"location"</span>: <span class="cs">"Mumbai, India"</span>,
+  <span class="ck">"open_to"</span>:  <span class="cs">"Linux System Administrator / Junior DevOps / Cloud Support roles"</span>
+}</pre>
+      <div class="line cursor-line"><span class="prompt">akash@portfolio:~$</span> <span class="cursor">&#9608;</span></div>
     </div>
+  </div>
+</section>
 
-    <script>
-        // ==================== PRELOADER ====================
-        // Hide preloader quickly (don't wait for heavy video)
-        window.addEventListener('DOMContentLoaded', function() {
-            const preloader = document.getElementById('preloader');
-            setTimeout(() => {
-                preloader.classList.add('hidden');
-            }, 800);
-        });
+</main>
 
-        // ==================== TYPEWRITER CODE ANIMATION ====================
-        const codeLines = [
-            { text: '// 👨‍💻 Akash Vishwakarma - Portfolio', type: 'comment' },
-            { text: '', type: 'plain' },
-            { text: 'const', type: 'keyword', space: true },
-            { text: ' developer', type: 'variable', space: true },
-            { text: ' = {', type: 'plain' },
-            { text: 'name:', type: 'keyword', space: true },
-            { text: "'Akash Vishwakarma'", type: 'string', space: true },
-            { text: ',', type: 'operator' },
-            { text: 'skills:', type: 'keyword', space: true },
-            { text: '[', type: 'operator', space: false },
-            { text: "'Web Dev'", type: 'string', space: false },
-            { text: ',', type: 'operator', space: false },
-            { text: "'Python'", type: 'string', space: false },
-            { text: ',', type: 'operator', space: false },
-            { text: "'AI'", type: 'string', space: false },
-            { text: ']', type: 'operator' },
-            { text: ',', type: 'operator' },
-            { text: 'hardWorker:', type: 'keyword', space: true },
-            { text: 'true', type: 'number' },
-            { text: ',', type: 'operator' },
-            { text: 'availableForWork:', type: 'keyword', space: true },
-            { text: 'true', type: 'number' },
-            { text: '};', type: 'plain' },
-            { text: '', type: 'plain' },
-            { text: '// 🚀 Let\'s create something awesome!', type: 'comment' },
-            { text: 'developer.', type: 'variable', space: false },
-            { text: 'buildFuture', type: 'function', space: false },
-            { text: '();', type: 'operator' }
-        ];
+<footer>
+  <span class="prompt">akash@portfolio:~$</span> logout <span class="dim">&copy; 2026 Akash Vishwakarma - session closed</span><span class="cursor">&#9608;</span>
+</footer>
 
-        class CodeTyper {
-            constructor(elementId, speed = 50) {
-                this.element = document.getElementById(elementId);
-                this.speed = speed;
-                this.lineIndex = 0;
-                this.charIndex = 0;
-                this.cursorElement = document.querySelector('.cursor-blink');
-                this.lineNumElement = document.getElementById('line-num');
-                this.colNumElement = document.getElementById('col-num');
-            }
+<!-- Lightbox -->
+<div id="lightbox" aria-hidden="true">
+  <div class="lb-box">
+    <div class="term-titlebar"><span class="dot r" id="lb-close"></span><span class="dot y"></span><span class="dot g"></span><span class="term-title" id="lb-title">view</span></div>
+    <img id="lb-img" alt="">
+  </div>
+</div>
 
-            syntaxHighlight(text, type) {
-                const span = document.createElement('span');
-                span.className = `syntax-${type}`;
-                span.textContent = text;
-                return span;
-            }
+<script>
+// boot sequence
+(function(){
+  var lines = [
+    "[  OK  ] Mounted /dev/portfolio",
+    "[  OK  ] Started network.service",
+    "[  OK  ] Loaded module: linux-core",
+    "[  OK  ] Loaded module: python",
+    "[  OK  ] Reached target akash-vishwakarma",
+    "",
+    "portfolio login: akash",
+    "Last login: " + new Date().toDateString() + " on tty1"
+  ];
+  var el = document.getElementById('boot-log'), i = 0;
+  function step(){
+    if (i < lines.length){ el.textContent += lines[i++] + "\n"; setTimeout(step, 90); }
+    else setTimeout(function(){ document.getElementById('boot').classList.add('done'); }, 250);
+  }
+  step();
+})();
 
-            updateLineCol() {
-                if (this.lineNumElement) {
-                    this.lineNumElement.textContent = Math.floor(this.charIndex / 8) + 1;
-                }
-                if (this.colNumElement) {
-                    this.colNumElement.textContent = (this.charIndex % 50) + 1;
-                }
-            }
+// hero typing
+(function(){
+  var cmds = document.querySelectorAll('.cmd[data-type]');
+  cmds.forEach(function(el, idx){
+    var text = el.getAttribute('data-type');
+    setTimeout(function(){
+      var i = 0;
+      (function t(){ if (i <= text.length){ el.textContent = text.slice(0, i++); setTimeout(t, 45);} })();
+    }, idx * 400);
+  });
+})();
 
-            async type() {
-                if (this.lineIndex >= codeLines.length) {
-                    setTimeout(() => {
-                        this.element.innerHTML = '';
-                        this.lineIndex = 0;
-                        this.charIndex = 0;
-                        this.type();
-                    }, 3000);
-                    return;
-                }
+// menu toggle
+document.getElementById('menuToggle').addEventListener('click', function(){
+  document.getElementById('nav').classList.toggle('open');
+});
+document.querySelectorAll('#nav a').forEach(function(a){
+  a.addEventListener('click', function(){ document.getElementById('nav').classList.remove('open'); });
+});
 
-                const line = codeLines[this.lineIndex];
+// lightbox
+var lb = document.getElementById('lightbox');
+document.querySelectorAll('.cert img').forEach(function(img){
+  img.addEventListener('click', function(){
+    document.getElementById('lb-img').src = img.src;
+    document.getElementById('lb-title').textContent = img.alt || 'certificate';
+    lb.classList.add('open');
+  });
+});
+lb.addEventListener('click', function(){ lb.classList.remove('open'); });
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') lb.classList.remove('open'); });
 
-                if (this.charIndex < line.text.length) {
-                    const char = line.text.charAt(this.charIndex);
-                    const highlighted = this.syntaxHighlight(char, line.type);
-                    this.element.appendChild(highlighted);
-                    this.charIndex++;
-                    this.updateLineCol();
-                    
-                    const randomSpeed = this.speed + Math.random() * 30;
-                    setTimeout(() => this.type(), randomSpeed);
-                } else {
-                    this.element.appendChild(document.createTextNode('\n'));
-                    this.lineIndex++;
-                    this.charIndex = 0;
-                    setTimeout(() => this.type(), 30);
-                }
-            }
-
-            start() {
-                this.cursorElement?.classList.add('active');
-                this.type();
-            }
-        }
-
-        // Initialize Code Typer
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                const codeTyper = new CodeTyper('typewriter-code', 40);
-                codeTyper.start();
-            }, 500);
-        });
-
-        // ==================== FLOATING PARTICLES ====================
-        function createFloatingParticles() {
-            const heroVisual = document.querySelector('.hero-visual');
-            if (!heroVisual) return;
-
-            for (let i = 0; i < 5; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'floating-particle';
-                particle.innerHTML = '✨';
-                particle.style.cssText = `
-                    position: absolute;
-                    font-size: ${10 + Math.random() * 10}px;
-                    left: ${Math.random() * 100}%;
-                    top: ${Math.random() * 100}%;
-                    animation: particleFloat ${2 + Math.random() * 3}s ease-in-out infinite;
-                    animation-delay: ${Math.random() * 2}s;
-                    opacity: 0.6;
-                    pointer-events: none;
-                `;
-                heroVisual.appendChild(particle);
-            }
-        }
-
-        window.addEventListener('load', createFloatingParticles);
-
-        // ==================== SCROLL PROGRESS BAR ====================
-        window.onscroll = function() {
-            // Scroll Progress
-            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (winScroll / height) * 100;
-            document.getElementById("scrollProgress").style.width = scrolled + "%";
-
-            // Back to Top Button
-            const backToTop = document.getElementById('backToTop');
-            if (winScroll > 500) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-
-            // Header Scroll Effect
-            const header = document.querySelector('header');
-            if (winScroll > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        };
-
-        // ==================== BACK TO TOP BUTTON ====================
-        document.getElementById('backToTop').addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // ==================== PROJECT MODAL ====================
-        const projectData = {
-            'calculator': {
-                title: 'Web Calculator',
-                image: 'https://i.pinimg.com/736x/8e/ad/bd/8eadbd95cbcdda23f44b8c7b05ab7931.jpg',
-                description: 'A fully functional calculator with basic arithmetic operations and modern UI design. Built with vanilla JavaScript and features a clean, responsive interface.',
-                tech: ['HTML5', 'CSS3', 'JavaScript', 'DOM Manipulation'],
-                features: ['Basic arithmetic operations', 'Clear and backspace functions', 'Responsive design', 'Keyboard support', 'Modern UI'],
-                live: 'https://akash991833.github.io/Simple-Web-Calculator/',
-                github: 'https://github.com/AKASH991833/Simple-Web-Calculator'
-            },
-            'weather': {
-                title: 'Weather Dashboard',
-                image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&auto=format&fit=crop',
-                description: 'A modern, feature-rich weather application providing real-time weather data, 7-day forecasts, air quality information, and beautiful visualizations using OpenWeatherMap API.',
-                tech: ['HTML5', 'CSS3', 'JavaScript', 'OpenWeather API', 'Chart.js', 'PWA'],
-                features: ['Real-time weather with animated icons', '7-day & 24-hour forecasts', 'Air Quality Index (AQI)', 'Sunrise/Sunset & Moon phase', 'Light/Dark theme toggle', 'Location detection & saved cities', 'Temperature graphs with Chart.js', 'Export/Share as PDF/Image'],
-                live: 'https://akash991833.github.io/Weather_Website/',
-                github: 'https://github.com/AKASH991833/Weather_Website'
-            },
-            'timer': {
-                title: 'Modern Timer',
-                image: 'https://images.unsplash.com/photo-1508962914676-134849a727f0?w=800&auto=format&fit=crop',
-                description: 'A sleek and modern timer with stopwatch, countdown, and multiple timer features for productivity.',
-                tech: ['HTML5', 'CSS3', 'JavaScript', 'Web Audio API'],
-                features: ['Stopwatch', 'Countdown timer', 'Multiple alarms', 'Sound notifications', 'Fullscreen mode'],
-                live: '#',
-                github: '#'
-            },
-            'password': {
-                title: 'Password Generator',
-                image: 'https://i.pinimg.com/736x/68/11/54/681154895992fda639bcf1642cdddb12.jpg',
-                description: 'Generate secure, random passwords with customizable length and character options for better online security.',
-                tech: ['HTML5', 'CSS3', 'JavaScript', 'Cryptography'],
-                features: ['Customizable length', 'Include symbols/numbers', 'Copy to clipboard', 'Password strength indicator', 'Secure random generation'],
-                live: 'random-password.html',
-                github: 'https://github.com/AKASH991833'
-            },
-            'downloader': {
-                title: 'Video Downloader',
-                image: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&auto=format&fit=crop',
-                description: 'Download videos from YouTube and Instagram with quality selection options and fast processing.',
-                tech: ['Python', 'Flask', 'YouTube API', 'HTML/CSS'],
-                features: ['YouTube support', 'Instagram support', 'Quality selection', 'Fast downloads', 'Clean interface'],
-                live: 'video-downloader.html',
-                github: 'https://github.com/AKASH991833'
-            },
-            'duplicate': {
-                title: 'Duplicate File Remover',
-                image: 'https://images.unsplash.com/photo-1614064641938-3bdee529374e?w=800&auto=format&fit=crop',
-                description: 'Windows application that scans and removes duplicate files to free up storage space. Built with Python and compiled as standalone .exe.',
-                tech: ['Python', 'PyInstaller', 'File System', 'Windows'],
-                features: ['Scan entire system', 'Preview duplicates', 'Safe deletion', 'Progress tracking', 'Standalone .exe'],
-                live: 'https://github.com/AKASH991833/duplicate-file-remover/raw/main/DuplicateFileRemover.exe',
-                github: 'https://github.com/AKASH991833/duplicate-file-remover'
-            }
-        };
-
-        function openProjectModal(projectId) {
-            const project = projectData[projectId];
-            if (!project) return;
-
-            const modalBody = document.getElementById('modal-body');
-            modalBody.innerHTML = `
-                <div class="modal-project">
-                    <div class="modal-image-wrapper">
-                        <img src="${project.image}" alt="${project.title}" class="modal-image">
-                    </div>
-                    <div class="modal-info">
-                        <h2 class="modal-title">${project.title}</h2>
-                        <p class="modal-description">${project.description}</p>
-                        <div class="modal-tech">
-                            ${project.tech.map(t => `<span class="tech-badge">${t}</span>`).join('')}
-                        </div>
-                        <div class="modal-features">
-                            <h4><i class="fas fa-check-circle"></i> Key Features:</h4>
-                            <ul>
-                                ${project.features.map(f => `<li><i class="fas fa-angle-right"></i> ${f}</li>`).join('')}
-                            </ul>
-                        </div>
-                        <div class="modal-actions">
-                            ${project.live !== '#' ? `
-                                <a href="${project.live}" target="_blank" class="action-btn live">
-                                    <i class="fas fa-external-link-alt"></i> Live Demo
-                                </a>
-                            ` : ''}
-                            ${project.github !== '#' ? `
-                                <a href="${project.github}" target="_blank" class="action-btn code">
-                                    <i class="fab fa-github"></i> View Code
-                                </a>
-                            ` : ''}
-                        </div>
-                    </div>
-                </div>
-            `;
-
-            document.getElementById('project-modal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeProjectModal() {
-            document.getElementById('project-modal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal on outside click
-        window.onclick = function(event) {
-            const modal = document.getElementById('project-modal');
-            if (event.target === modal) {
-                closeProjectModal();
-            }
-        }
-
-        // ==================== VIEW MORE BUTTONS ====================
-        document.addEventListener('DOMContentLoaded', function() {
-            // Skills View More Button
-            const skillsBtn = document.getElementById('view-more-skills');
-            if (skillsBtn) {
-                skillsBtn.addEventListener('click', function() {
-                    const hiddenSkills = document.querySelectorAll('.hidden-skill');
-                    const icon = this.querySelector('i');
-                    const text = this.querySelector('span');
-                    
-                    hiddenSkills.forEach(skill => skill.classList.toggle('show'));
-                    
-                    if (hiddenSkills[0].classList.contains('show')) {
-                        text.textContent = 'Show Less';
-                        icon.classList.remove('fa-chevron-down');
-                        icon.classList.add('fa-chevron-up');
-                    } else {
-                        text.textContent = 'View More Skills';
-                        icon.classList.remove('fa-chevron-up');
-                        icon.classList.add('fa-chevron-down');
-                        document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            }
-
-            // Projects View More Button
-            const projectsBtn = document.getElementById('view-more-projects');
-            if (projectsBtn) {
-                projectsBtn.addEventListener('click', function() {
-                    const hiddenProjects = document.querySelectorAll('.hidden-project');
-                    const icon = this.querySelector('i');
-                    const text = this.querySelector('span');
-                    
-                    hiddenProjects.forEach(project => project.classList.toggle('show'));
-                    
-                    if (hiddenProjects[0].classList.contains('show')) {
-                        text.textContent = 'Show Less';
-                        icon.classList.remove('fa-chevron-down');
-                        icon.classList.add('fa-chevron-up');
-                    } else {
-                        text.textContent = 'View More Projects';
-                        icon.classList.remove('fa-chevron-up');
-                        icon.classList.add('fa-chevron-down');
-                        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            }
-
-            // Certifications View More Button
-            const certsBtn = document.getElementById('view-all-certifications');
-            if (certsBtn) {
-                certsBtn.addEventListener('click', function() {
-                    const hiddenCerts = document.querySelectorAll('.hidden-certification');
-                    const icon = this.querySelector('i');
-                    const text = this.querySelector('span');
-                    
-                    hiddenCerts.forEach(cert => cert.classList.toggle('show'));
-                    
-                    if (hiddenCerts[0].classList.contains('show')) {
-                        text.textContent = 'Show Less';
-                        icon.classList.remove('fa-chevron-down');
-                        icon.classList.add('fa-chevron-up');
-                    } else {
-                        text.textContent = 'View All Certificates';
-                        icon.classList.remove('fa-chevron-up');
-                        icon.classList.add('fa-chevron-down');
-                        document.getElementById('certifications').scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            }
-
-            // Lightbox functionality for certifications
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const closeBtn = document.querySelector('.close-btn');
-
-            document.querySelectorAll('.certification-card img').forEach(img => {
-                img.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    lightbox.style.display = 'block';
-                    lightboxImg.src = this.src;
-                });
-            });
-
-            closeBtn.addEventListener('click', function() {
-                lightbox.style.display = 'none';
-            });
-
-            lightbox.addEventListener('click', function() {
-                lightbox.style.display = 'none';
-            });
-        });
-
-        // Open link with confirmation
-        function openWithConfirm(url) {
-            if (confirm('Do you want to visit ' + url + '?')) {
-                window.open(url, '_blank');
-            }
-        }
-
-        // ==================== MOBILE MENU TOGGLE ====================
-        const menuBtn = document.querySelector('.menu-btn');
-        const navbar = document.querySelector('.navbar');
-
-        if (menuBtn) {
-            menuBtn.addEventListener('click', function() {
-                navbar.classList.toggle('active');
-                this.classList.toggle('active');
-            });
-        }
-
-        // ==================== SMOOTH SCROLL FOR NAVIGATION ====================
-        document.querySelectorAll('.navbar a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                    // Close mobile menu after clicking
-                    navbar.classList.remove('active');
-                    menuBtn?.classList.remove('active');
-                }
-            });
-        });
-
-        // ==================== ACTIVE NAVIGATION HIGHLIGHT ====================
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.navbar a');
-
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="particle-network.js"></script>
+// skill bars animate on scroll
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if (e.isIntersecting){ e.target.querySelectorAll('.fill').forEach(function(f){ f.style.width = getComputedStyle(f).getPropertyValue('--w'); }); } });
+}, {threshold: .2});
+io.observe(document.querySelector('.units'));
+</script>
 </body>
-
 </html>
